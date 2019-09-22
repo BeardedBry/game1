@@ -14,7 +14,7 @@ function addClicker() {
         y: Math.random() * 300,
     };
     const img = new Image();
-    img.src = "res/images/cat.png";
+    img.src = "res/images/js.png";
     img.style.position = "absolute";
     img.addEventListener("click", removeClicker, false);
 
@@ -23,12 +23,22 @@ function addClicker() {
 }
 
 function removeClicker(e){
-    e.target.parentElement.removeChild(e.target);
+    e.target.parentNode.removeChild(e.target);
+    clickers--;
+    checkGameOver();
+}
+
+function checkGameOver(){
+    document.querySelector('#remain').innerHTML = clickers;
+    if(clickers == 0) {
+        const taken = Math.round((Date.now() - startTime) / 1000);
+        alert(`De-js-ed in ${taken} seconds.`);
+    }
 }
 
 let i = 0;
 
-while(i < 10){
+while(i < clickers){
     addClicker();
     i++;
 }
