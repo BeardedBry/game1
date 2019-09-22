@@ -9,4 +9,12 @@
 img{
     width: 100px;
     height: 100px;
+    transition: opacity .1s;
+}
+
+img.fade{
+    width: 100px;
+    height: 100px;
+    transition: opacity 1s;
+    transition: 1s;
 }

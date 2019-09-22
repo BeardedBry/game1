@@ -1,3 +1,6 @@
+//'esversion:6'
+
+console.log('Game Start ' + Date.now())
 let clickers = 50;
 let startTime = Date.now();
 
@@ -23,6 +26,7 @@ function addClicker() {
 }
 
 function removeClicker(e){
+    //e.target.style.opacity = 0;
     e.target.parentNode.removeChild(e.target);
     clickers--;
     checkGameOver();
